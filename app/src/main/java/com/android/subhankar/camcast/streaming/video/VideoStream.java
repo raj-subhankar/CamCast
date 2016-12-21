@@ -176,7 +176,7 @@ public abstract class VideoStream extends MediaStream {
 		// If the camera has already been opened, we apply the change immediately
 		if (mCamera != null) {
 
-			if (mStreaming && mMode == MODE_MEDIARECORDER_API) {
+			if (mStreaming && mMode == MODE_MEDIACODEC_API_2) {
 				lockCamera();
 			}
 
@@ -196,7 +196,7 @@ public abstract class VideoStream extends MediaStream {
 					mFlashEnabled = false;
 					throw new RuntimeException("Can't turn the flash on !");
 				} finally {
-					if (mStreaming && mMode == MODE_MEDIARECORDER_API) {
+					if (mStreaming && mMode == MODE_MEDIACODEC_API_2) {
 						unlockCamera();
 					}
 				}
